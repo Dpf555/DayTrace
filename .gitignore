@@ -1,0 +1,52 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.iml
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+application-local.yml
+application-local.yaml
+application-local.properties
+
+# Java / Maven (keep wrapper files trackable)
+target/
+*.class
+
+# Frontend
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+
+# Local runtime data
+*.log
+logs/
+data/
+backups/
+*.dump
+*.sqlite
+*.sqlite3
