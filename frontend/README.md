@@ -2,6 +2,8 @@
 
 当前仅有目录骨架，尚未初始化 Vue 项目、安装依赖或实现页面。
 
+独立交互原型已放在 [docs/prototype](../docs/prototype/README.md)，可直接打开其中的 `index.html` 浏览。它用于讨论页面与流程，不属于正式 Vue 业务实现。
+
 ## 目录职责
 
 - `src/views/`：登录、记录、日历、回收站和账号设置页面。

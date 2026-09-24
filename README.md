@@ -8,6 +8,7 @@
 <p align="center">
   <a href="docs/requirements-boundary.md">需求边界</a> ·
   <a href="docs/architecture.md">系统架构</a> ·
+  <a href="docs/api接口文档.md">接口文档</a> ·
   <a href="docs/README.md">开发文档</a>
 </p>
 
@@ -19,7 +20,7 @@ DayTrace 是一个日记／笔记与日程管理 Web 应用，也是一个以自
 
 用户也可以直接创建、修改和删除日程。AI 提供建议，用户保留对文字与安排的最终决定权。
 
-> 当前状态：已完成需求边界讨论、架构设计和仓库目录骨架。业务功能尚未实现，仓库暂不可直接启动。
+> 当前状态：已完成需求与架构设计、接口设计稿和独立页面原型；后端已实现 hello 学习接口（GET 参数、POST JSON、响应对象及参数校验）。正式账号、记录、日程和 AI 业务尚未实现，Vue 与 Python 服务仍为目录骨架。
 
 ## 首版规划
 
@@ -55,11 +56,11 @@ AI 只处理用户本次主动提交的内容，不自动读取历史日记。AI
 | 层次 | 已确定方向 | 当前建议，搭建时确认 |
 | --- | --- | --- |
 | 前端 | Vue | Vue 3、Vite、Vue Router、JavaScript |
-| 业务后端 | Java、Spring Boot | Java 21、Maven、Spring Security、MyBatis |
+| 业务后端 | Java 21、Spring Boot 4.1.1、Maven、Spring Web MVC | Spring Security、MyBatis |
 | AI 服务 | Python、LangChain | Python 3.12、FastAPI、Pydantic |
 | 数据存储 | 由 Java 统一管理业务数据 | MySQL 8.4、Flyway |
 
-具体依赖版本和模型服务商尚未锁定。设计理由、接口草案与验证方案见 [系统架构设计](docs/architecture.md)。
+后端初始依赖见 `backend/pom.xml`；其他组件版本和模型服务商后续确定。设计理由、接口草案与验证方案见 [系统架构设计](docs/architecture.md)。
 
 ## 仓库结构
 
@@ -101,7 +102,7 @@ DayTrace/
 2. 阅读 [领域术语](CONTEXT.md) 与 [系统架构](docs/architecture.md)，理解各模块职责。
 3. 按需进入 [前端](frontend/README.md)、[业务后端](backend/README.md)、[AI 服务](ai-service/README.md) 或 [部署](deploy/README.md) 说明。
 
-当前没有 `package.json`、`pom.xml`、Python 依赖清单或应用入口，因此暂不提供启动命令。下一步是共同确认工程依赖与数据模型，再逐个模块实现。
+后端已包含 `pom.xml`、Maven Wrapper 和启动类，可在 IDEA 中作为 Maven 项目打开；操作及命令见 [后端说明](backend/README.md)。前端和 AI 服务仍无依赖清单或应用入口。下一步从简单接口开始，再逐步实现业务模块。
 
 ## 开发路线
 
